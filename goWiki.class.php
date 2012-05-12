@@ -30,9 +30,7 @@ class goWiki
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 		curl_setopt($ch, CURLOPT_REFERER, $_SERVER['REMOTE_ADDR']);
 		$body = curl_exec($ch);
-
 		curl_close($ch);
-		// now, process the JSON string
 		$json = json_decode($body);
 
 		return $json->responseData->results;
@@ -56,12 +54,13 @@ class goWiki
 	{
 		$res = json_decode($page);
 		$output = '';
-        foreach ($res->query->pages as $page)
-        {
-          $output .= $page->extract;
-        }
+    
+    foreach ($res->query->pages as $page)
+    {
+      $output .= $page->extract;
+    }
 
-        return $output;
+    return $output;
 	}
 
 }
