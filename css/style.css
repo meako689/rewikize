@@ -54,7 +54,6 @@ div.right-holder
 div.mid-holder
 {
     width:44%;
-    min-width:400px;
     margin:0px auto;
 
 }
@@ -127,4 +126,72 @@ a.logo
     height:32px;
     display:block;
     margin-top;70px;
+    float:left;
+}
+
+
+.search-content
+{
+}
+
+a.logo-large
+{
+    margin-top:200px;
+    min-height:111px;
+    display:block;
+    margin-top;70px;
+}
+
+a.logo-large img
+{
+    width:100%;
+
+}
+
+.search-content input#id_search_field
+{
+    border:1px solid #bebebe;
+    padding: 3px;
+    width:84%;
+}
+
+.search-content button
+{
+    margin:0px;
+    height:29px;
+    border:1px solid #bebebe;
+    background:#838383 url("../img/search-icon.png") 45% 45% no-repeat;
+    border:1px solid #bebebe;
+    border-radius:3px;
+    width:13%;
+    vertical-align: bottom;
+    
+}
+.search-content button:hover,
+.header button:hover
+{
+    background-color:#b0b0b0;
+}
+
+.header form input#id_search_field
+{
+    border:1px solid black;
+    width:190px;
+    height:28px;
+    margin:0px 2px 0px 10px;
+}
+.header form 
+{
+    
+}
+.header form button
+{
+    margin:0px;
+    height:32px;
+    border:1px solid #bebebe;
+    background:#838383 url("../img/search-icon.png") 45% 45% no-repeat;
+    border-radius:3px;
+    width:43px;
+    vertical-align: bottom;
+    
 }

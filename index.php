@@ -1,9 +1,14 @@
 <!Doctype html>
 <?php
 require_once('goWiki.class.php');
-$query = 'Львів';
-$info = new goWiki();
-$res = $info->getResults($query);
+
+if (isset($_GET['search_field'])){
+  $query = $_GET['search_field'];
+  $info = new goWiki();
+  $res = $info->getResults($query);
+}else{
+  $query = '';
+}
 ?>
 <html>
 
@@ -21,16 +26,34 @@ $res = $info->getResults($query);
 
 <div class="mid-holder">
     
+
+<?php if($query !=='' ):?>
 <div class="header">
-   <a href="/" class="logo"></a>
+   <a href="" class="logo"></a>
+        <form action="" method="GET">  
+            <input id="id_search_field" name="search_field" /> 
+            <button type="submit"></button>
+        </form>
 </div>
-<div class="article-content">
-<h1>
-<?php echo $query ?>
-</h1>
-<?php echo $res['text'] ?>
+  <div class="article-content">
+    <h1>
+      <?php echo $query ?>
+    </h1>
+    <?php echo $res['text'] ?>
+  </div>
+<?php else:?>
+
+    <div class="search-content">
+        <a href="/" class="logo-large"><img src="img/logo-large.png"/></a>
+        <form action="" method="GET">  
+            <input id="id_search_field" name="search_field" /> 
+            <button type="submit"></button>
+        </form>
+    </div>
+<?php endif;?>
+
 </div>
-</div>
+
 <div>
 
 
