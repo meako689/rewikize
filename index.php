@@ -49,18 +49,21 @@ if (isset($_GET['search_field'])){
             <input id="id_search_field" name="search_field" /> 
             <button type="submit"></button>
         </form>
+            <div id="search_descr">Новий погляд на старий веб</div>
     </div>
 <?php endif;?>
 
 </div>
 
-<div>
-
+<div class="footer-container">
+    <div id="footer-text">
+        © 2012 ТЕМ-51. Плотніков, Коведа, Микитин, Гринда;
+    </div>
+</div>
 
 <script type="text/javascript" charset="utf-8">
     var images =<?php echo json_encode($res['images']); ?>
 </script>
 
 <script type="text/javascript" charset="utf-8" src="js/rewikize-styler.js"></script>
-</div>
 
