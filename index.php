@@ -20,8 +20,6 @@ if (isset($_GET['search_field'])){
 </script>
 </head>
 <body>
-  <div class="left-holder"></div>
-  <div class="right-holder"></div>
 
 <div class="left-holder"></div>
 <div class="right-holder"></div>
@@ -47,7 +45,7 @@ if (isset($_GET['search_field'])){
 
     <div class="search-content">
         <a href="/" class="logo-large"><img src="img/logo-large.png"/></a>
-        <form action="" method="GET">  
+        <form action="search.php" method="GET">  
             <input id="id_search_field" name="search_field" /> 
             <button type="submit"></button>
         </form>
