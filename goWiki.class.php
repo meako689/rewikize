@@ -15,16 +15,20 @@ class goWiki
   private $img_url;
 
   
-	public function getResults($word)
+	public function getResults($word, $with_images)
 	{
     $this->wiki_domen = $this->checkLang($word);
     
-    return array(
+    $data = array(
       'text'   => $this->getText($word),
       'images' => $this->getImages($word),
-      'videos'  => $this->getVideo($word),
-      'colors' => $this->getColorPallete()
+      'videos'  => $this->getVideo($word)
     );
+    if($with_images == true){
+      $data['colors'] = $this->getColorPallete();
+    }
+    
+    return $data;
 	}
 
 	protected function getImages($word)
