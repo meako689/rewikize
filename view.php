@@ -5,7 +5,7 @@ require_once('goWiki.class.php');
 if (isset($_GET['search_field'])){
   $query = $_GET['search_field'];
   $info = new goWiki();
-  $with_img = (isset($_GET['with_images']))? $_GET['with_images'] : false;
+  $with_img = (isset($_GET['with_colors']))? $_GET['with_colors'] : false;
   $res = $info->getResults($query, $with_img);
 }else{
   $query = '';

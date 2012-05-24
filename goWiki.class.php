@@ -15,7 +15,7 @@ class goWiki
   private $img_url;
 
   
-	public function getResults($word, $with_images)
+	public function getResults($word, $with_colors)
 	{
     $this->wiki_domen = $this->checkLang($word);
     
@@ -24,7 +24,7 @@ class goWiki
       'images' => $this->getImages($word),
       'videos'  => $this->getVideo($word)
     );
-    if($with_images == true){
+    if($with_colors == true){
       $data['colors'] = $this->getColorPallete();
     }
     
@@ -60,6 +60,7 @@ class goWiki
 		curl_setopt($ch, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
 		$body_wiki = curl_exec($ch);
 		curl_close($ch);
+ 
 		return $this->prepareText($body_wiki);
 	}
 
