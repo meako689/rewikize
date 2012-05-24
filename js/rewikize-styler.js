@@ -1,22 +1,3 @@
-
-$('.search-content').hover(function(){
-        $('#search_descr').fadeIn('slow');
-    })
-
-$('.footer-container').hover(function(){
-        $('#footer-text').fadeIn('slow');
-    })
-
-$('.header').mouseenter(function(){
-    $('.header form').fadeIn('fast');
-    });
-
-$('.header').mouseleave(function(){
-    $('.header form').fadeOut('fast');
-    });
-
-
-
 $('h1,h2,h3').each(function(){
 
     var text = $(this).html();
