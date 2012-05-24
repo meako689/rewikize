@@ -22,7 +22,7 @@ class goWiki
     return array(
       'text'   => $this->getText($word),
       'images' => $this->getImages($word),
-      'video'  => $this->getVideo($word),
+      'videos'  => $this->getVideo($word),
       //'colors' => $this->getColorPallete()
     );
 	}

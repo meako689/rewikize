@@ -1,18 +1,46 @@
+function shuffle(array) {
+    var tmp, current, top = array.length;
+
+    if(top) while(--top) {
+        current = Math.floor(Math.random() * (top + 1));
+        tmp = array[current];
+        array[current] = array[top];
+        array[top] = tmp;
+    }
+
+    return array;
+}
+
+
+function generate_inserts(images, videos){
+    images = images.map(function(item) {return '<img src="'+item+'">'});
+    videos = videos.map(function(item) {return '<iframe width="99%" height="315px" src="http://www.youtube.com/embed/'+item+'" frameborder="0" allowfullscreen></iframe>'});
+
+    return shuffle(images.concat(videos));
+};
+//
+// to not display "undefined"
+function pop_or_none(array){
+    item = array.pop();
+    if (item) {return item}
+    else return "";
+    };
+
+var inserts = generate_inserts(images, videos);
+
 $('h1,h2,h3').each(function(){
 
     var text = $(this).html();
-    var position = parseInt($(this).position().top)
+    var position = parseInt($(this).position().top);
     
     var html_to_insert = '<div class="decoholder" style="display:none; top:'+position+'px">\
          <div class="deco st1">'+text+'</div>\
          <div class="deco st2">'+text+'</div>\
          <div class="deco st3">'+text+'</div>'
-    var rightimg = '<img src="'+images.pop()+'">'
-    var leftimg = '<img src="'+images.pop()+'">'
     var closingdiv = '</div>'
 
-    $('.left-holder').append(html_to_insert+leftimg+closingdiv);
-    $('.right-holder').append(html_to_insert+rightimg+closingdiv);
+    $('.left-holder').append(html_to_insert + pop_or_none(inserts) + closingdiv);
+    $('.right-holder').append(html_to_insert + pop_or_none(inserts) + closingdiv);
 
     $('.left-holder').height(position);
     $('.right-holder').height(position);

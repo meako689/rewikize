@@ -40,6 +40,9 @@ if (isset($_GET['search_field'])){
       <?php echo $query ?>
     </h1>
     <?php echo $res['text'] ?>
+
+
+
   </div>
 
 
@@ -52,7 +55,8 @@ if (isset($_GET['search_field'])){
 
 </div>
 <script type="text/javascript" charset="utf-8">
-    var images =<?php echo json_encode($res['images']); ?>
+    var images =<?php echo json_encode($res['images']); ?>;
+    var videos =<?php echo json_encode($res['videos']); ?>;
 </script>
 
 <script type="text/javascript" charset="utf-8" src="js/rewikize-styler.js"></script>
