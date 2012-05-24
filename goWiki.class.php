@@ -23,7 +23,7 @@ class goWiki
       'text'   => $this->getText($word),
       'images' => $this->getImages($word),
       'videos'  => $this->getVideo($word),
-      //'colors' => $this->getColorPallete()
+      'colors' => $this->getColorPallete()
     );
 	}
 
@@ -124,7 +124,7 @@ class goWiki
     curl_setopt($ch, CURLOPT_URL, $url);
 
     $json = curl_exec($ch);
-    print_r(json_decode($json)); 
+    return(json_decode($json)); 
   }
   
   public function getArticles($word)

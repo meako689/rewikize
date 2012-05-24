@@ -57,6 +57,7 @@ if (isset($_GET['search_field'])){
 <script type="text/javascript" charset="utf-8">
     var images =<?php echo json_encode($res['images']); ?>;
     var videos =<?php echo json_encode($res['videos']); ?>;
+    var colors =<?php echo json_encode($res['colors']); ?>;
 </script>
 
 <script type="text/javascript" charset="utf-8" src="js/rewikize-styler.js"></script>

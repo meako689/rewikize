@@ -28,12 +28,20 @@ function pop_or_none(array){
 
 var inserts = generate_inserts(images, videos);
 
+function pick_rand_color(){
+    if (colors.info){
+    return colors.info.colors[ Math.floor ( Math.random() * colors.info.colors.length )]
+    }
+    else return "000000"
+};
+
+
 $('h1,h2,h3').each(function(){
 
     var text = $(this).html();
     var position = parseInt($(this).position().top);
     
-    var html_to_insert = '<div class="decoholder" style="display:none; top:'+position+'px">\
+    var html_to_insert = '<div class="decoholder" style="display:none; color:#'+pick_rand_color()+'; top:'+position+'px">\
          <div class="deco st1">'+text+'</div>\
          <div class="deco st2">'+text+'</div>\
          <div class="deco st3">'+text+'</div>'
