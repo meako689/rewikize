@@ -60,8 +60,14 @@ class goWiki
 		curl_setopt($ch, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
 		$body_wiki = curl_exec($ch);
 		curl_close($ch);
- 
-		return $this->prepareText($body_wiki);
+    
+    $parset_body = $this->prepareText($body_wiki);
+    
+    if(preg_match_all('|<li.*?>REDIRECT (.*)</li>|sei', $parset_body, $matches)){ 
+      return $this->getText($matches['1']['0']);
+    }else{
+      return $this->prepareText($body_wiki);
+    }
 	}
 
 	protected function prepareText($page)
