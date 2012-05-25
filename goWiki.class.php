@@ -149,8 +149,13 @@ class goWiki
 		curl_setopt($ch, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
 		$body_wiki = curl_exec($ch);
 		curl_close($ch);
+    $body_decoded = json_decode($body_wiki);
    
-   return json_decode($body_wiki);
+   if(count($body_decoded['1'])<2){
+      header("Location: view.php?". 'search_field='.urlencode($body_decoded['1']['0']));
+   }else{
+      return json_decode($body_wiki);
+   }
   }
 }
 
