@@ -29,7 +29,7 @@ function pop_or_none(array){
 var inserts = generate_inserts(images, videos);
 
 function pick_rand_color(){
-    if (colors.info){
+    if (colors && colors.info){
     return colors.info.colors[ Math.floor ( Math.random() * colors.info.colors.length )]
     }
     else return "000000"
