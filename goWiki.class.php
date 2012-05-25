@@ -23,7 +23,7 @@ class goWiki
       'text'   => $this->getText($word),
       'images' => $this->getImages($word),
       'videos'  => $this->getVideo($word),
-      'colors'  => []
+      'colors'  => array()
     );
     if($with_colors == true){
       $data['colors'] = $this->getColorPallete();
