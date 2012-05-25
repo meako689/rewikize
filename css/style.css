@@ -155,22 +155,35 @@ a.logo-large img
     width:84%;
 }
 
+.article-content button,
 .search-content button
 {
     margin:0px;
-    height:29px;
     border:1px solid #bebebe;
-    background:#838383 url("../img/search-icon.png") 45% 45% no-repeat;
     border:1px solid #bebebe;
     border-radius:3px;
-    width:13%;
     vertical-align: bottom;
     
 }
-.search-content button:hover,
-.header button:hover
+
+.search-content button
 {
-    background-color:#b0b0b0;
+    width:13%;
+    background:#838383 url("../img/search-icon.png") 45% 45% no-repeat;
+    height:29px;
+}
+
+#search_list button
+{
+    margin-top:30px;
+    background:#838383 url("../img/book.png") 50% 50% no-repeat;
+    width:100%;
+    height:70px;
+}
+
+button:hover
+{
+    background-color:#b0b0b0!important;
 }
 
 .header form input#id_search_field

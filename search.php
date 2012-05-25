@@ -38,11 +38,13 @@ if (isset($_GET['search_field'])){
       <?php echo $query ?>
     </h1>
     <?php if (!empty($res['1'])):?>
-      <form action="view.php" method="GET">
+      <form action="view.php" id="search_list" method="GET">
         <?php foreach($res['1'] as $articles):?>
         <input type="radio" name="search_field" value="<?php echo $articles?>"><?php echo $articles ?></input></br>
         <?php endforeach; ?>
-        <button type="submit" value="Показати">Показати</button>
+        <hr/>
+        <input type="checkbox" name="with_colors" value="true" /> З кольорами (beta)
+        <button type="submit" value="Показати"></button>
       </form>
     <?php else:?>
        <p>Нічого не знайдено.</p>
